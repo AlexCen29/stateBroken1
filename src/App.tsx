@@ -24,6 +24,7 @@ function App() {
   );
 }
 
+//Reparar esta onda
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

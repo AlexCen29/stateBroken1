@@ -2,8 +2,8 @@ import SideMenu from "../../components/sideMenu/SideMenu";
 function HomePage() {
   return (
     <>
-      <h1>Hola</h1>
-      <SideMenu />
+      <h1>Logo</h1>
+      <SideMenu/>
     </>
   );
 }
