@@ -1,0 +1,44 @@
+ .principal{
+    background-color:#FBF6F6;
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+    width: 60%;
+    margin-right: 505px;
+ }
+ .header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px 8px 24px;  
+    gap: 16px;
+  }
+  
+  .name {
+    font-size: 14px;
+  }
+  
+  .initial {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(251, 131, 95, 0.3);  
+    color: #C14646;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+  
+  .agent-label {
+    font-size: 10px;
+    color: #79747E;  
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;  
+    padding: 8px 16px 8px 24px;
+    gap: 16px;  
+  }
+
+  
