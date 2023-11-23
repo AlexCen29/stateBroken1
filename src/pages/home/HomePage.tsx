@@ -1,9 +1,12 @@
+import "../../../src/styles/index.css";
+import "./HomePage.css"
+import RenderProperties from "../../components/renderProperties/RenderProperties";
 import SideMenu from "../../components/sideMenu/SideMenu";
 function HomePage() {
   return (
-    <>
-      <h1>Logo</h1>
-      <SideMenu/>
+    <>      
+      <SideMenu/>      
+      <RenderProperties/>
     </>
   );
 }

@@ -14,9 +14,10 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
-    padding: 75px 0 0; /* Height of navbar */
+    padding: 60px 0 30px; 
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 220px;
+    /* box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3),0px 1px 3px 1px rgba(0,0,0,0.15); */
+    width: 180px;
     z-index: 600;
   }
   
@@ -27,7 +28,7 @@ body {
   }
   .sidebar .active {
     border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);    
   }
   
   .sidebar-sticky {
@@ -39,15 +40,30 @@ body {
   }
 
   .list-group-item{
+    height: 3em;
     border-bottom: none;
-    line-height: 2.5em;
+    line-height: 1.2em;
     font-size: 16px;    
+    color: #1D1B20;
+    font-weight: 500;
+    padding: 0.2em 0 0 0.2em;
+  }
+
+  #main-navbar{
+    height: 4em;
+    box-shadow: none;
   }
 
  #logo{
     padding: 0.5em;
  }
- 
- /* #search{
-  align-self: flex-end;
- } */
+
+ #icons-nav{
+  display: flex;
+  width: 13em;
+  justify-content: space-evenly;
+ }
+
+ #icon{
+  font-size: 1.5em;
+ }
