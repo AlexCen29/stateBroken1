@@ -49,6 +49,29 @@ body {
     padding: 0.2em 0 0 0.2em;
   }
 
+  .dropdown-toggle{
+    border: none;
+    background-color: #FFFF;
+    color: #1D1B20;
+    font-weight: 500;
+  }
+
+  .dropend-item{
+    border: none;
+    padding: 1em;
+    height: auto;
+  }
+
+  .dropend-item:hover{
+    background-color: #FEF7FF;
+  }
+
+  #prop-dropend{
+    display: flex;    
+    justify-content: flex-end;
+    align-content: center;
+  }
+
   #main-navbar{
     height: 4em;
     box-shadow: none;

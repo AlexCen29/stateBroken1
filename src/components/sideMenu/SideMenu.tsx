@@ -17,10 +17,19 @@ function SideMenu() {
                   <span>Procesos de venta</span>
                 </a>
               </li>
-              <li className="list-group-item py-1">
-                <a href="" className="text-reset">
-                  <span>Propiedades</span>
-                </a>
+              <li className="list-group-item py-1 dropend">
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Propiedades
+                </button>
+                <ul className="dropdown-menu list-group" id="prop-dropend">
+                  <li className="list-group-item dropend-item">Ver todas</li>
+                  <li className="list-group-item dropend-item">Dar propiedad de alta</li>
+                </ul>
               </li>
               <li className="list-group-item py-1">
                 <a href="" className="text-reset">
@@ -42,17 +51,6 @@ function SideMenu() {
                   <span>Herramientas</span>
                 </a>
               </li>
-                <li className="list-group-item py-1">
-                  <div className="btn-group dropend">
-                    <button className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropend
-                    </button>
-                    <ul className="dropdown-menu">
-                      <li>Ver todas</li>
-                      <li>Dar propiedad de alta</li>
-                    </ul>
-                  </div>
-                </li>
             </div>
           </div>
         </nav>
