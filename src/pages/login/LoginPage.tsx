@@ -43,7 +43,6 @@ const LoginPage = () => {
       if (responsi.ok) {
         const data: LoginResponse = await responsi.json();
         localStorage.setItem("token", data.token);
-        console.log(data.token);
         navigate("/home");
       } else {
         setError("Usuario o contraseña incorrectos");
