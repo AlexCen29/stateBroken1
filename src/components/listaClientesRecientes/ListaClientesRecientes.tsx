@@ -5,7 +5,7 @@ function ListaClientesRecientes() {
 
     return (
         
-        <div className="container Principal">
+        <div className="container principal">
             <h1>Clientes agregados recientemente</h1>
 
             <div className="header">
