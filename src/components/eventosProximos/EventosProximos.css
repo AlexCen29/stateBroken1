@@ -1,0 +1,38 @@
+.container {
+    color: #1D1B20;
+}
+
+.card {
+    max-width: 18em;
+    max-height: 55vh;
+    font-size: 12px;
+}
+
+.card-header {
+    padding: 1em;
+    padding-bottom: .3em;
+}
+
+.card-body {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.miboton1 {
+    border-radius: 2em;
+    padding: .5em 1em;
+    background-color: aliceblue;
+    color: #F15757;
+}
+
+.event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
