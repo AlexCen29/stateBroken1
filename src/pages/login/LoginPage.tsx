@@ -6,12 +6,10 @@ import {useNavigate} from 'react-router-dom';
 function LoginPage() {
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-  //Credential validation; if valid, redirect to HomePage
-  //...
-  navigate("pages/home/HomePage");
+  navigate('/home');
   };
 
   return (

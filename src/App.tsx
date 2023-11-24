@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,16 +7,17 @@ import {
 } from "react-router-dom";
 
 // Components
-// import LoginPage from "./pages/login/LoginPage";
 import HomePage from "./pages/home/HomePage";
 import ErrorPage from "./pages/error/ErrorPage"; 
+import LoginPage from "./pages/login/LoginPage";
 
 function App() {  
   return(
     <React.StrictMode>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LoginPage/>} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
@@ -24,7 +25,6 @@ function App() {
   );
 }
 
-//Reparar esta onda
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
