@@ -22,13 +22,17 @@ async function fetchProperties(): Promise<Property[]> {
     throw new Error('Token not found');
   }
   const token = cookie.split('=')[1];
-  const response = await fetch('URL_DE_TU_API', {
+  const response = await fetch('https://jimenezmiapi.somee.com/api/InmueblesyTerrenos/ultimos5', {
     headers: {
       'Authorization': `Bearer ${token}`
     }
   });
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    if (response.status === 401) {
+      throw new Error('Unauthorized');
+    } else {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
   }
   const data = await response.json();
   return data;
@@ -50,6 +54,7 @@ function RenderProperties() {
       <div className="card text-white bg-danger mb-3" style={{ maxWidth: '18rem' }}>
         <div className="card-header">Error</div>
         <div className="card-body">
+          
           <h5 className="card-title">Fuera de servicio</h5>
           <p className="card-text">Lo sentimos, actualmente no podemos mostrar las propiedades.</p>
         </div>
