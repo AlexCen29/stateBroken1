@@ -10,7 +10,7 @@ function EventosProximos() {
                 </div>
                 <div className="card-body">
                     <div className="event-row">
-                        <p>Invadir Palestina</p>
+                        <p>Invadir Palestina!!</p>
                         <input type="checkbox" id="ocultarCheckbox" />
                     </div>
                     <div className="event-row">
