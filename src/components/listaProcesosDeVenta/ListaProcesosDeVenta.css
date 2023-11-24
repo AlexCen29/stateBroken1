@@ -1,0 +1,39 @@
+.principal {
+    width: 100%; 
+    max-width: none;
+    padding: 1.5em;
+    border-radius: 10px;
+    background-color: #fbf6f6;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    box-shadow: none;
+    padding: 1.5em 3em;
+    margin-bottom: 20px;
+    border-radius: 10px; 
+    background-color: #fbf6f6;  
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(251, 131, 95, 0.3);
+    color: #c14646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  #clients {
+    width: 100%;
+    text-align: center;
+  }
+.icono-nombre{
+    display: flex;
+    flex-direction: row;
+}
