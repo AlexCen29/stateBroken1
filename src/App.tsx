@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 // Components
-import LoginPage from "./pages/login/LoginPage";
+// import LoginPage from "./pages/login/LoginPage";
 import HomePage from "./pages/home/HomePage";
 import ErrorPage from "./pages/error/ErrorPage"; 
 
@@ -16,8 +16,7 @@ function App() {
     <React.StrictMode>
       <Router>
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
@@ -26,7 +25,10 @@ function App() {
 }
 
 //Reparar esta onda
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<App />);
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
+root.render(<App/>);
 
 export default App;
