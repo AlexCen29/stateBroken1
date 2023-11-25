@@ -17,11 +17,10 @@ interface Property {
 }
 
 async function fetchProperties(): Promise<Property[]> {
-  const cookie = document.cookie.split('; ').find(row => row.startsWith('token'));
-  if (!cookie) {
+  const token = localStorage.getItem('token');
+  if (!token) {
     throw new Error('Token not found');
   }
-  const token = cookie.split('=')[1];
   const response = await fetch('https://jimenezmiapi.somee.com/api/InmueblesyTerrenos/ultimos5', {
     headers: {
       'Authorization': `Bearer ${token}`
@@ -66,7 +65,7 @@ function RenderProperties() {
   return (
     <div className="container" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
-      {properties.slice(0, 5).map(property => (
+      {properties.slice(0, 4).map(property => (
         <div className="card" style={{ width: "16rem" }} key={property.id}>
           <div className="container" id="white-header">
             <div className="white-header-data">

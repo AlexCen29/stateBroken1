@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 interface LoginResponse {
   token: string;
+  idEmpleado: number;
+  nombreEmpleado: string;
 }
 
 interface AlertProps {
@@ -29,24 +31,32 @@ const LoginPage = () => {
     event.preventDefault();
 
     try {
-      const responsi = await fetch("http://jimenezmiapi.somee.com/api/Login/Acceso", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          correo: usercorreo,
-          contrasenia: userpassword,
-        }),
-      });
+      const responsi = await fetch(
+        "http://jimenezmiapi.somee.com/api/Login/Acceso",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            correo: usercorreo,
+            contrasenia: userpassword,
+          }),
+        }
+      );
 
       if (responsi.ok) {
         const data: LoginResponse = await responsi.json();
-        document.cookie = `token=${data.token}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("idEmpleado", data.idEmpleado.toString());
+        localStorage.setItem("nombreEmpleado", data.nombreEmpleado);
+
         console.log(data.token);
+        console.log(data.idEmpleado);
+        console.log(data.nombreEmpleado);
         navigate("/home");
       } else {
-        setError("Usuario o contraseña incorrectos");
+        setError("Usuario o contraseña incorrectos.");
       }
     } catch (error) {
       console.log(error);
