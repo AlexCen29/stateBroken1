@@ -44,8 +44,9 @@ const LoginPage = () => {
         const data: LoginResponse = await responsi.json();
         let date = new Date();
 
-        date.setTime(date.getTime()+1);
+        date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // un dia de expiracion
         document.cookie = `token=${data.token}; expires=${date.toUTCString()}; path=/`;
+        console.log(data.token);
         navigate("/home");
       } else {
         setError("Usuario o contraseña incorrectos.");

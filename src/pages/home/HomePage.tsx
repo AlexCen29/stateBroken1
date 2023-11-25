@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 import "../../../src/styles/index.css";
 import "./HomePage.css"
 import RenderProperties from "../../components/renderProperties/RenderProperties";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
 
-function HomePage() {
-  let navigate = useNavigate();
 
-  useEffect(() => {
+function HomePage() {
+  /* let navigate = useNavigate(); */
+
+ /*  useEffect(() => {
     const token = document.cookie
       .split('; ')
       .find(row => row.startsWith('token'))
@@ -32,7 +34,7 @@ function HomePage() {
   navigate('/');
 });
     }
-  }, []);
+  }, []); */
   return (
     <>
       <SideMenu />
