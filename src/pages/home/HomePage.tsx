@@ -10,9 +10,9 @@ import ListaClientesRecientes from "../../components/listaClientesRecientes/List
 
 
 function HomePage() {
-  /* let navigate = useNavigate(); */
+  let navigate = useNavigate();
 
- /*  useEffect(() => {
+  useEffect(() => {
     const token = document.cookie
       .split('; ')
       .find(row => row.startsWith('token'))
@@ -34,7 +34,7 @@ function HomePage() {
   navigate('/');
 });
     }
-  }, []); */
+  }, []);
   return (
     <>
       <SideMenu />
