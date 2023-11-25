@@ -46,7 +46,7 @@ const LoginPage = () => {
         console.log(data.token);
         navigate("/home");
       } else {
-        setError("Usuario o contraseña incorrectos");
+        setError("Usuario o contraseña incorrectos.");
       }
     } catch (error) {
       console.log(error);
