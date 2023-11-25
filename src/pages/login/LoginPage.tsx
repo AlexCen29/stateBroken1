@@ -4,7 +4,10 @@ import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
 
 interface LoginResponse {
-  token: string;
+  token: string,
+  idEmpleado: number,
+  nombreEmpleado: string;
+
 }
 
 interface AlertProps {
@@ -42,11 +45,18 @@ const LoginPage = () => {
 
       if (responsi.ok) {
         const data: LoginResponse = await responsi.json();
-        document.cookie = `token=${data.token}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+        let date = new Date();
+
+        date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // un dia de expiracion
+        document.cookie = `token=${data.token}; expires=${date.toUTCString()}; path=/`;
+        document.cookie = `idEmpleado=${data.idEmpleado}; expires=${date.toUTCString()}; path=/`;
+        document.cookie = `nombreEmpleado=${data.nombreEmpleado}; expires=${date.toUTCString()}; path=/`;
         console.log(data.token);
+        console.log(data.idEmpleado);
+        console.log(data.nombreEmpleado);
         navigate("/home");
       } else {
-        setError("Usuario o contraseña incorrectos");
+        setError("Usuario o contraseña incorrectos.");
       }
     } catch (error) {
       console.log(error);

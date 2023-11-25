@@ -66,7 +66,7 @@ function RenderProperties() {
   return (
     <div className="container" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
-      {properties.slice(0, 5).map(property => (
+      {properties.slice(0, 4).map(property => (
         <div className="card" style={{ width: "16rem" }} key={property.id}>
           <div className="container" id="white-header">
             <div className="white-header-data">
