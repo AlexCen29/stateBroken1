@@ -20,7 +20,7 @@ const clientesPrueba: Cliente[] = Array.from({ length: 10 }, (_, i) => ({
   empleado: {
     id: i,
     nombre: `Empleado ${i}`,
-    imagen: `url-imagen-${i}`,
+    imagen: `agente ${i}`,
   },
 }));
 
@@ -54,6 +54,7 @@ function ListaClientesRecientes() {
     };
 
     fetchClientes().catch((error) =>
+    
       setError(
         "Un problema al cargar los datos. Por favor, inténtalo de nuevo más tarde."
       )
