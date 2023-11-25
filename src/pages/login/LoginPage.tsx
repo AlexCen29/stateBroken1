@@ -4,10 +4,9 @@ import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
 
 interface LoginResponse {
-  token: string,
-  idEmpleado: number,
+  token: string;
+  idEmpleado: number;
   nombreEmpleado: string;
-
 }
 
 interface AlertProps {
@@ -32,25 +31,26 @@ const LoginPage = () => {
     event.preventDefault();
 
     try {
-      const responsi = await fetch("http://jimenezmiapi.somee.com/api/Login/Acceso", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          correo: usercorreo,
-          contrasenia: userpassword,
-        }),
-      });
+      const responsi = await fetch(
+        "http://jimenezmiapi.somee.com/api/Login/Acceso",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            correo: usercorreo,
+            contrasenia: userpassword,
+          }),
+        }
+      );
 
       if (responsi.ok) {
         const data: LoginResponse = await responsi.json();
-        let date = new Date();
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("idEmpleado", data.idEmpleado.toString());
+        localStorage.setItem("nombreEmpleado", data.nombreEmpleado);
 
-        date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // un dia de expiracion
-        document.cookie = `token=${data.token}; expires=${date.toUTCString()}; path=/`;
-        document.cookie = `idEmpleado=${data.idEmpleado}; expires=${date.toUTCString()}; path=/`;
-        document.cookie = `nombreEmpleado=${data.nombreEmpleado}; expires=${date.toUTCString()}; path=/`;
         console.log(data.token);
         console.log(data.idEmpleado);
         console.log(data.nombreEmpleado);

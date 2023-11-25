@@ -17,11 +17,10 @@ interface Property {
 }
 
 async function fetchProperties(): Promise<Property[]> {
-  const cookie = document.cookie.split('; ').find(row => row.startsWith('token'));
-  if (!cookie) {
+  const token = localStorage.getItem('token');
+  if (!token) {
     throw new Error('Token not found');
   }
-  const token = cookie.split('=')[1];
   const response = await fetch('https://jimenezmiapi.somee.com/api/InmueblesyTerrenos/ultimos5', {
     headers: {
       'Authorization': `Bearer ${token}`

@@ -13,10 +13,9 @@ function HomePage() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    const token = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('token'))
-      ?.split('=')[1];
+    
+    const token = localStorage.getItem('token');
+
 
     if (!token) {
       navigate('/');

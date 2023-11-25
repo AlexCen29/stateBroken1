@@ -29,32 +29,35 @@ function ListaClientesRecientes() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const cookie = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("token"));
-    if (!cookie) {
-      throw new Error("Token not found");
-    }
+    const fetchClientes = async () => {
+      const token = localStorage.getItem('token');
+      console.log(token); // Imprime el token en consola
 
-    const token = cookie.split("=")[1];
-    fetch("http://jimenezmiapi.somee.com/api/Cliente/ultimos5", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Hubo un error al obtener los datos");
-        }
-        return response.json();
-      })
-      .then((data) => setClientes([...data, ...clientesPrueba])) // Añadir los datos de prueba después de los datos de la API // Solo se muestran los primeros 5 clientes
-      .catch((error) =>
-        setError(
-          "Un problema al cargar los datos. Por favor, inténtalo de nuevo más tarde."
-        )
-      );
+      if (!token) {
+        throw new Error("Token not found");
+      }
+
+      const response = await fetch('https://jimenezmiapi.somee.com/api/Cliente/ultimos5', {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+      if (!response.ok) {
+        throw new Error("Hubo un error al obtener los datos");
+      }
+
+      const data = await response.json();
+      setClientes([...data, ...clientesPrueba]); 
+      console.log(data);
+      // Añadir los datos de prueba después de los datos de la API // Solo se muestran los primeros 5 clientes
+    };
+
+    fetchClientes().catch((error) =>
+      setError(
+        "Un problema al cargar los datos. Por favor, inténtalo de nuevo más tarde."
+      )
+    );
   }, []);
 
   return (
