@@ -6,7 +6,9 @@ function EventosProximos() {
         <div className="" id="events">
             <div className="card" id="events-card">
                 <div className="card-header">
-                    <div className="title">Próximos eventos</div>
+                    <div className="title">
+                        <h1>Próximos eventos</h1>
+                    </div>
                 </div>
                 <div className="card-body">
                     <div className="event-row">

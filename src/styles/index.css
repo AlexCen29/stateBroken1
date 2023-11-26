@@ -11,6 +11,7 @@
     justify-content: center;
     margin-inline: 0.2em;
     max-width: 60%;
+    max-height: 2.5em;
     background-color: #F15757; 
     border: 2px solid #F15757;   
     border-radius: 2em;
@@ -28,6 +29,5 @@
 
 #buttons{
     display: flex;    
-    max-height: 3em;
     justify-content: flex-end;
 }

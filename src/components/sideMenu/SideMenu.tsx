@@ -28,7 +28,9 @@ function SideMenu() {
                 </button>
                 <ul className="dropdown-menu list-group" id="prop-dropend">
                   <li className="list-group-item dropend-item">Ver todas</li>
-                  <li className="list-group-item dropend-item">Dar propiedad de alta</li>
+                  <li className="list-group-item dropend-item">
+                    Dar propiedad de alta
+                  </li>
                 </ul>
               </li>
               <li className="list-group-item py-1">
@@ -109,6 +111,11 @@ function SideMenu() {
                   id="icon"
                   style={{ color: "#1D1B20" }}
                 ></i>
+              </a>
+              <a href="#">
+                <div id="profile">
+                  <img src="img\Avatar1.jpg" alt="profile" />
+                </div>
               </a>
             </ul>
           </div>

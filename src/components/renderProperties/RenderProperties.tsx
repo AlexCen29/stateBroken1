@@ -73,7 +73,7 @@ function RenderProperties() {
     <div className="" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
       <div id="properties-grid">
-        {properties.slice(0, 4).map((property) => (
+        {properties.slice(0, 3).map((property) => (
           <div className="card" style={{ width: "16rem" }} key={property.id}>
             <div className="container" id="white-header">
               <div className="white-header-data">
@@ -90,9 +90,9 @@ function RenderProperties() {
               </div>
             </div>
             <img src={property.img1Path} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{property.direccion}</h5>
-              <p className="card-text">{property.descripcion}</p>
+            <div id="prop-card-bod">
+              <h5 className="card-title card-item">{property.direccion}</h5>
+              <p className="card-item">{property.descripcion}</p>
               <div id="buttons">
                 <a href="#" className="btn btn-primary detalles">
                   Detalles

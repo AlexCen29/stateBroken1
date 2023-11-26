@@ -1,19 +1,26 @@
+p{
+    margin: 0;
+}
+
 .container {
     color: #1D1B20;      
 }
 
 .card {
     max-width: 18em;
-    max-height: 55vh;
     font-size: 12px;
 }
 
 .card-header {
-    padding: 1em;
+    padding: 0.5em 0 0.2em 1em;
 }
 
 .title{
-    font-size: 22px;
+    font-size: 22px;    
+}
+
+.title h1{
+    margin: 0.2em;
 }
 
 .card-body {
@@ -27,14 +34,17 @@
 }
 
 .card-footer {
-    display: flex;
+    display: flex;    
+    height: 5em;    
     justify-content: flex-end;
+    align-items: center;
 }
 
 .event-row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;    
+    max-height: 3em;
+    padding: 0.2em;    
 }
 
 #events{   
@@ -46,20 +56,11 @@
 }
 
 #events-card{
-    max-width: 90%;
-    height: 100%;
-    font-size: 14px;
-    font-weight: 500;    
-}
-
-#buttons{
-    width: 100%;    
+    max-width: 100%;
+    height: 40vh;
+    font-size: 14px;    
 }
 
 #calendar-btn{
-    max-height: 5em;
+    max-width: 12em;
 }
-
-/* #ocultarCheckbox{
-
-} */

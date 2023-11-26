@@ -8,6 +8,6 @@ h1{
 #home-page{
     display: grid;
     grid-template-rows: 2;
-    width: 86%;
-    margin-left: 12%;    
+    width: 85%;
+    margin-left: 10em;    
 }

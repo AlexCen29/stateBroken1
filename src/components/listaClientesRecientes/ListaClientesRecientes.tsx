@@ -78,7 +78,7 @@ function ListaClientesRecientes() {
             <div className="name">No hay clientes recientes</div>
           </div>
         ) : (
-          clientes.slice(0, 4).map((cliente, index) => (
+          clientes.slice(0, 5).map((cliente, index) => (
             <div className="item" key={`${cliente.id}-${index}`}>
               <div className="name">{cliente.nombre}</div>
               <div className="broker">
