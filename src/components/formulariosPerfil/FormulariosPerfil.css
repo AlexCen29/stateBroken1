@@ -1,7 +1,6 @@
 .miTab {
-    background-color: #ffff;
-    margin-left: 15%;
-    width: 35.5%;
+    background-color: #ffff;    
+    width: 100%;
     height: 100%;
     border-radius:  10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -49,6 +48,3 @@ footer{
     margin-right: 1em;
     font-size: medium;
 }
-
-
-

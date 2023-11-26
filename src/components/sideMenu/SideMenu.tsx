@@ -113,7 +113,7 @@ function SideMenu() {
                 ></i>
               </a>
               <a href="#">
-                <div id="profile">
+                <div id="profile-pic">
                   <img src="img\Avatar1.jpg" alt="profile" />
                 </div>
               </a>

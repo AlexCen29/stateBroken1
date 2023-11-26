@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../../../src/styles/index.css";
 import "./FormulariosPerfil.css";
-import ListaMisClientes from './subComponents/listaMisClientes/ListaMisClientes';
-import MisPropiedades from './subComponents/misPropiedades/MisPropiedades';
-import MisProcesosVenta from './subComponents/misProcesosVenta/MisProcesosVenta';
-import FormClientes from './subComponents/formClientes/FormClientes';
-import FormPropiedades from './subComponents/formPropiedades/FormPropiedades';
+import ListaMisClientes from "./subComponents/listaMisClientes/ListaMisClientes";
+import MisPropiedades from "./subComponents/misPropiedades/MisPropiedades";
+import MisProcesosVenta from "./subComponents/misProcesosVenta/MisProcesosVenta";
+import FormClientes from "./subComponents/formClientes/FormClientes";
+import FormPropiedades from "./subComponents/formPropiedades/FormPropiedades";
 
 function FormulariosPerfil() {
   const [mostrarFormulario, setMostrarFormulario] = useState(null);
@@ -15,10 +15,14 @@ function FormulariosPerfil() {
   };
 
   return (
-    <div className="mt-5 miTab">
+    <div className="miTab">
       <ul className="nav nav-tabs">
         <li className="nav-item">
-          <a className="nav-link active" data-bs-toggle="tab" href="#contenido1">
+          <a
+            className="nav-link active"
+            data-bs-toggle="tab"
+            href="#contenido1"
+          >
             Clientes
           </a>
         </li>
@@ -35,11 +39,14 @@ function FormulariosPerfil() {
       </ul>
       <div className="tab-content">
         <div className="tab-pane container active" id="contenido1">
-          {mostrarFormulario === 'clientes' ? (
+          {mostrarFormulario === "clientes" ? (
             <>
               <FormClientes />
               <footer>
-                <button className="miBoton" onClick={() => mostrarFormularioHandler(null)}>
+                <button
+                  className="miBoton"
+                  onClick={() => mostrarFormularioHandler(null)}
+                >
                   Cerrar
                 </button>
               </footer>
@@ -50,7 +57,7 @@ function FormulariosPerfil() {
               <footer>
                 <button
                   className="miBoton"
-                  onClick={() => mostrarFormularioHandler('clientes')}
+                  onClick={() => mostrarFormularioHandler("clientes")}
                 >
                   +
                 </button>
@@ -59,11 +66,14 @@ function FormulariosPerfil() {
           )}
         </div>
         <div className="tab-pane fade misCartas" id="contenido2">
-          {mostrarFormulario === 'propiedades' ? (
+          {mostrarFormulario === "propiedades" ? (
             <>
               <FormPropiedades />
               <footer>
-                <button className="miBoton" onClick={() => mostrarFormularioHandler(null)}>
+                <button
+                  className="miBoton"
+                  onClick={() => mostrarFormularioHandler(null)}
+                >
                   Cerrar
                 </button>
               </footer>
@@ -74,7 +84,7 @@ function FormulariosPerfil() {
               <footer>
                 <button
                   className="miBoton"
-                  onClick={() => mostrarFormularioHandler('propiedades')}
+                  onClick={() => mostrarFormularioHandler("propiedades")}
                 >
                   +
                 </button>
@@ -83,11 +93,14 @@ function FormulariosPerfil() {
           )}
         </div>
         <div className="tab-pane container fade" id="contenido3">
-          {mostrarFormulario === 'procesosVenta' ? (
+          {mostrarFormulario === "procesosVenta" ? (
             <>
               <h1>Formulario de Procesos de Venta</h1>
               <footer>
-                <button className="miBoton" onClick={() => mostrarFormularioHandler(null)}>
+                <button
+                  className="miBoton"
+                  onClick={() => mostrarFormularioHandler(null)}
+                >
                   Cerrar
                 </button>
               </footer>
@@ -98,7 +111,7 @@ function FormulariosPerfil() {
               <footer>
                 <button
                   className="miBoton"
-                  onClick={() => mostrarFormularioHandler('procesosVenta')}
+                  onClick={() => mostrarFormularioHandler("procesosVenta")}
                 >
                   +
                 </button>

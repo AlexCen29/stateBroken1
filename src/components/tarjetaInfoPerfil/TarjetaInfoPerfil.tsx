@@ -4,7 +4,7 @@ import avatarImage from "/img/Avatar1.jpg";
 
 function TarjetaInfoPerfil() {
   return (
-    <div className="container infoBase">
+    <div className="infoBase">
       <div className="container encabezado">
         <img src={avatarImage} alt="Profile" />
         <div>

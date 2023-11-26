@@ -1,5 +1,9 @@
+h2{
+    font-size: 22px;
+}
+
 .infoBase {
-    width: 40%;
+    width: 100%;
     background-color: #fbf6f6;
     border-radius: 10px;
     padding: 1%;

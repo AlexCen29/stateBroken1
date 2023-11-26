@@ -92,13 +92,13 @@ body {
   font-size: 1.5em;
  }
 
- #profile{ 
+ #profile-pic{ 
   max-width: 2em;
   max-height: auto;
   object-fit:cover;
  }
 
- #profile img{
+ #profile-pic img{
   max-width: 100%;
   max-height: auto;
   border-radius: 50%;

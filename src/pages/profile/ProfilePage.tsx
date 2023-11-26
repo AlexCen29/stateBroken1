@@ -5,9 +5,15 @@ import TarjetaInfoPerfil from "../../components/tarjetaInfoPerfil/TarjetaInfoPer
 
 function ProfilePage() {
   return (
-    <div className="row" id="row-id">    
-      <TarjetaInfoPerfil />
-      <FormulariosPerfil />
+    <div id="profile">
+      <div className="row">
+        <div id="left-col">
+          <TarjetaInfoPerfil />
+        </div>
+        <div id="right-col">
+          <FormulariosPerfil />
+        </div>
+      </div>
     </div>
   );
 }
