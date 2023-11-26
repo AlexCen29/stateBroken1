@@ -1,0 +1,39 @@
+.miFormCliente{
+    display: flex;
+    flex-direction: column;
+    grid-gap:1cap;
+    padding: 2%;
+}
+.miFormCliente input{
+    border-radius: 5px;
+    border: 1px solid;
+}
+.miNombre, .miCorreo{
+    display: flex;
+    flex-direction: column;
+}
+.grupo1 div{
+    display: flex;
+    flex-direction: column;
+}
+.grupo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.miBotonCliente{
+    margin-top: 4%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.2em;
+    background-color: #FF9E81; 
+    border: 2px solid #FF9E81;   
+    border-radius: 2em;
+    font-size: 12px;
+    padding: 0.5em;
+    padding-inline: 1em;
+    box-shadow: none;
+    font-size: medium;
+}

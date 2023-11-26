@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import "../../../src/styles/index.css";
 import "./HomePage.css";
-import RenderProperties from "../../components/renderProperties/RenderProperties";
+// import RenderProperties from "../../components/renderProperties/RenderProperties";
 import SideMenu from "../../components/sideMenu/SideMenu";
-import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
-import EventosProximos from "../../components/eventosProximos/EventosProximos";
+import ProfilePage from "../profile/ProfilePage";
+// import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
+// import EventosProximos from "../../components/eventosProximos/EventosProximos";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -38,13 +39,38 @@ function HomePage() {
     <>
       <SideMenu />
       <div id="home-page">
-        <div className="row">
-          <RenderProperties />
-          <EventosProximos />
-        </div>
-        <div className="row">
-          <ListaClientesRecientes />
-        </div>
+        {/* <div className="row">
+          <div className="col">
+            <div className="left-col">
+              <RenderProperties />
+              <ListaClientesRecientes />
+              <div id="graph-container">
+                <img
+                  className="img-component"
+                  id="graph"
+                  src="img\Grafica.png"
+                  alt="Graph"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="right-col">
+              <EventosProximos />
+              <div id="calendar-container">
+                <img
+                  className="img-component"
+                  id="calendar"
+                  src="img\Calendario.png"
+                  alt="Calendar"
+                />
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+        {/* Profile page */}
+        <ProfilePage/>
       </div>
     </>
   );

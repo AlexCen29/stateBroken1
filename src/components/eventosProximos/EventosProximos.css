@@ -29,10 +29,6 @@ p{
     flex-direction: column;
 }
 
-.checkbox{
-    width: 2em;
-}
-
 .card-footer {
     display: flex;    
     height: 5em;    
@@ -48,15 +44,15 @@ p{
 }
 
 #events{   
-    width: 35%;
+    width: 4fr;
     height: 100%;
     align-self: flex-end;
-    padding-inline: 3em;
-    padding-top: 4em;
+    /* padding-inline: 3em;
+    padding-top: 4em; */
 }
 
 #events-card{
-    max-width: 100%;
+    max-width: 90%;
     height: 40vh;
     font-size: 14px;    
 }

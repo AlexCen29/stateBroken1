@@ -5,9 +5,44 @@ h1{
     font-weight: 500;
 }
 
+.left-col{
+    display: flex;
+    flex-wrap: wrap;
+    width: 6fr;
+}
+
+.right-col{
+    display: flex;
+    flex-wrap: wrap;
+    width: 4fr;
+}
+
 #home-page{
-    display: grid;
-    grid-template-rows: 2;
-    width: 85%;
-    margin-left: 10em;    
+    display: grid;    
+    grid-template-columns: 6fr 4fr;
+    width: 100%;
+    padding: 0 2% 0 12%;    
+}
+
+#graph-container{
+    width: 34%;    
+    align-self: flex-end;
+    padding: 2%;
+}
+
+#graph{
+    width: 100%;
+    height: 100%;    
+}
+
+#calendar-container{
+    height: 45vh;
+    width: auto;    
+    align-self: flex-end;
+    padding: 2%;
+}
+
+#calendar{
+    width: 100%;
+    height: 100%;    
 }

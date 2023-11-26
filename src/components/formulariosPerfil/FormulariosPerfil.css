@@ -1,0 +1,54 @@
+.miTab {
+    background-color: #ffff;
+    margin-left: 15%;
+    width: 35.5%;
+    height: 100%;
+    border-radius:  10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.miTab .nav-tabs {
+    justify-content: space-around;
+    background-color: #facdcd;
+    border-radius: 10px 10px 0 0;
+}
+
+.miTab .nav-item .nav-link.active,
+.miTab .nav-item .nav-link:focus {
+    color: #99404a;
+    border-color: #99404a;
+}
+
+.miTab .tab-content {
+    margin: 0;
+    padding: 0;
+}
+
+.miTab .tab-pane {
+    margin: 0;
+    padding: 0;
+}
+footer{
+    display: flex;
+    justify-content: end;
+}
+
+.miBoton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.2em;
+    max-width: 60%;
+    background-color: #F15757;    
+    border: 2px solid #F15757;   
+    border-radius: 2em;
+    font-size: 12px;
+    padding: 0.5em;
+    padding-inline: 1em;
+    box-shadow: none;
+    margin-right: 1em;
+    font-size: medium;
+}
+
+
+
