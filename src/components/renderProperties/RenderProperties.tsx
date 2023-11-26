@@ -70,7 +70,7 @@ function RenderProperties() {
   }
 
   return (
-    <div className="container" id="properties">
+    <div className="" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
       <div id="properties-grid">
         {properties.slice(0, 4).map((property) => (

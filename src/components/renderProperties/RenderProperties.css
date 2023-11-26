@@ -20,9 +20,8 @@ i{
 }
 
 #properties{
-    margin: 1.5em;
-    margin-left: 13em;
-    width: 55%;
+    padding: 1% 0 0 2%;        
+    max-width: 55vw;
 }
 
 #properties-grid{
@@ -80,36 +79,9 @@ i{
     border-radius: 0;
 }
 
-.btn-primary{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-inline: 0.2em;
-    max-width: 60%;
-    background-color: #F15757; 
-    border: 2px solid #F15757;   
-    border-radius: 2em;
-    font-size: 12px;
-    padding: 0.5em;
-    padding-inline: 1em;
-    box-shadow: none;
-}
-
-.btn-primary:hover{
-    background-color: #C14646;
-    border: 2px solid #C14646;  
-    box-shadow: none;  
-}
-
 .detalles{
     border: 2px solid #F15757;
     background-color: #FFFF;
     color: #F15757;
     font-weight: bold;
-}
-
-#buttons{
-    display: flex;    
-    max-height: 3em;
-    justify-content: flex-end;
 }

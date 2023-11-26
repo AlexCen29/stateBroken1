@@ -4,3 +4,10 @@ h1{
     color: #1D1B20;
     font-weight: 500;
 }
+
+#home-page{
+    display: grid;
+    grid-template-rows: 2;
+    width: 86%;
+    margin-left: 12%;    
+}

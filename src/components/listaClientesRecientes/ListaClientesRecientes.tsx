@@ -30,31 +30,33 @@ function ListaClientesRecientes() {
 
   useEffect(() => {
     const fetchClientes = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       console.log(token); // Imprime el token en consola
 
       if (!token) {
         throw new Error("Token not found");
       }
 
-      const response = await fetch('https://jimenezmiapi.somee.com/api/Cliente/ultimos5', {
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  });
+      const response = await fetch(
+        "https://jimenezmiapi.somee.com/api/Cliente/ultimos5",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Hubo un error al obtener los datos");
       }
 
       const data = await response.json();
-      setClientes([...data, ...clientesPrueba]); 
+      setClientes([...data, ...clientesPrueba]);
       console.log(data);
       // Añadir los datos de prueba después de los datos de la API // Solo se muestran los primeros 5 clientes
     };
 
     fetchClientes().catch((error) =>
-    
       setError(
         "Un problema al cargar los datos. Por favor, inténtalo de nuevo más tarde."
       )
@@ -62,37 +64,35 @@ function ListaClientesRecientes() {
   }, []);
 
   return (
-    <>
-      <div className="container" id="clients">
-        <h1>Clientes agregados recientemente</h1>
-        <div className="principal">
-          {error && (
-            <div className="item">
-              <div className="name">{error}</div>
-            </div>
-          )}
+    <div className="" id="clients">
+      <h1>Clientes agregados recientemente</h1>
+      <div className="principal">
+        {error && (
+          <div className="item">
+            <div className="name">{error}</div>
+          </div>
+        )}
 
-          {clientes.length === 0 ? (
-            <div className="item">
-              <div className="name">No hay clientes recientes</div>
-            </div>
-          ) : (
-            clientes.slice(0, 9).map((cliente, index) => (
-              <div className="item" key={`${cliente.id}-${index}`}>
-                <div className="name">{cliente.nombre}</div>
-                <div className="broker">
-                  <div className="picture">
-                    {cliente.empleado.nombre.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="agent-name">{cliente.empleado.nombre}</div>
+        {clientes.length === 0 ? (
+          <div className="item">
+            <div className="name">No hay clientes recientes</div>
+          </div>
+        ) : (
+          clientes.slice(0, 4).map((cliente, index) => (
+            <div className="item" key={`${cliente.id}-${index}`}>
+              <div className="name">{cliente.nombre}</div>
+              <div className="broker">
+                <div className="picture">
+                  {cliente.empleado.nombre.charAt(0).toUpperCase()}
                 </div>
-                <div className="agent-label">~{cliente.empleado.imagen}</div>
+                <div className="agent-name">{cliente.empleado.nombre}</div>
               </div>
-            ))
-          )}
-        </div>
+              <div className="agent-label">~{cliente.empleado.imagen}</div>
+            </div>
+          ))
+        )}
       </div>
-    </>
+    </div>
   );
 }
 

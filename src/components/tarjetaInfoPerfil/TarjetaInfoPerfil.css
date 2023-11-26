@@ -1,0 +1,35 @@
+.infoBase {
+    width: 40%;
+    background-color: #fbf6f6;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.encabezado img {
+    width: 20%;
+    border-radius: 90px;
+}
+
+.encabezado div {
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.descripcion, .data {
+    flex: 1; 
+    padding-right: 2%;
+}

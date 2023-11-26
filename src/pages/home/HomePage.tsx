@@ -6,9 +6,10 @@ import "./HomePage.css";
 import RenderProperties from "../../components/renderProperties/RenderProperties";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
+import EventosProximos from "../../components/eventosProximos/EventosProximos";
 
 function HomePage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -36,9 +37,14 @@ function HomePage() {
   return (
     <>
       <SideMenu />
-      <RenderProperties />
-      <div>
-        <ListaClientesRecientes />
+      <div id="home-page">
+        <div className="row">
+          <RenderProperties />
+          <EventosProximos />
+        </div>
+        <div className="row">
+          <ListaClientesRecientes />
+        </div>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 .container {
-    color: #1D1B20;
+    color: #1D1B20;      
 }
 
 .card {
@@ -10,7 +10,10 @@
 
 .card-header {
     padding: 1em;
-    padding-bottom: .3em;
+}
+
+.title{
+    font-size: 22px;
 }
 
 .card-body {
@@ -19,16 +22,13 @@
     flex-direction: column;
 }
 
+.checkbox{
+    width: 2em;
+}
+
 .card-footer {
     display: flex;
     justify-content: flex-end;
-}
-
-.miboton1 {
-    border-radius: 2em;
-    padding: .5em 1em;
-    background-color: aliceblue;
-    color: #F15757;
 }
 
 .event-row {
@@ -36,3 +36,30 @@
     justify-content: space-between;
     align-items: center;
 }
+
+#events{   
+    width: 35%;
+    height: 100%;
+    align-self: flex-end;
+    padding-inline: 3em;
+    padding-top: 4em;
+}
+
+#events-card{
+    max-width: 90%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 500;    
+}
+
+#buttons{
+    width: 100%;    
+}
+
+#calendar-btn{
+    max-height: 5em;
+}
+
+/* #ocultarCheckbox{
+
+} */
