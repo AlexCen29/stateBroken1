@@ -7,6 +7,7 @@ interface LoginResponse {
   token: string;
   idEmpleado: number;
   nombreEmpleado: string;
+  imgperfil: string;
 }
 
 interface AlertProps {
@@ -25,7 +26,7 @@ const LoginPage = () => {
   const [usercorreo, setUsercorreo] = useState<string>("");
   const [userpassword, setUserpassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -50,10 +51,12 @@ const LoginPage = () => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("idEmpleado", data.idEmpleado.toString());
         localStorage.setItem("nombreEmpleado", data.nombreEmpleado);
+        localStorage.setItem("imgperfil", data.imgperfil);
 
         console.log(data.token);
         console.log(data.idEmpleado);
         console.log(data.nombreEmpleado);
+        console.log(data.imgperfil);
         navigate("/home");
       } else {
         setError("Usuario o contraseña incorrectos.");

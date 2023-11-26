@@ -38,8 +38,9 @@ function HomePage() {
   return (
     <>
       <SideMenu />
+      {/*
       <div id="home-page">
-        {/* <div className="row">
+         <div className="row">
           <div className="col">
             <div className="left-col">
               <RenderProperties />
@@ -67,11 +68,11 @@ function HomePage() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>        
+      </div> */} 
 
-        {/* Profile page */}
-        <ProfilePage/>
-      </div>
+      {/* Profile page */}
+      <ProfilePage/>
     </>
   );
 }
