@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import "../../../src/styles/index.css";
 import "./HomePage.css";
-// import RenderProperties from "../../components/renderProperties/RenderProperties";
+import RenderProperties from "../../components/renderProperties/RenderProperties";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import ProfilePage from "../profile/ProfilePage";
-// import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
-// import EventosProximos from "../../components/eventosProximos/EventosProximos";
+import ListaClientesRecientes from "../../components/listaClientesRecientes/ListaClientesRecientes";
+import EventosProximos from "../../components/eventosProximos/EventosProximos";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ function HomePage() {
   return (
     <>
       <SideMenu />
-      {/*
+      
       <div id="home-page">
          <div className="row">
           <div className="col">
@@ -69,10 +69,10 @@ function HomePage() {
             </div>
           </div>
         </div>        
-      </div> */} 
+      </div> 
 
-     
-     <ProfilePage/>
+     {/* 
+     <ProfilePage/> */}
     </>
   );
 }
