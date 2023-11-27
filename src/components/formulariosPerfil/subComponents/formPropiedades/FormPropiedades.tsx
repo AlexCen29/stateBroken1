@@ -1,6 +1,8 @@
 import "../../../../../src/styles/index.css";
 import "./FormPropiedades.css";
 import FormCasa from "./subComponents/formCasa/FormCasa";
+import FormDepartamento from "./subComponents/formDepartameto/FormDepartamento";
+import FormTerreno from "./subComponents/formTerreno/FormTerreno";
 function FormPropiedades() {
     return (
         <div className="mt-5 miTab2">
@@ -26,10 +28,10 @@ function FormPropiedades() {
                 <FormCasa />
                 </div>
                 <div className="tab-pane fade misCartas" id="contenido22">
-                <h1>FORM2</h1>
+                <FormDepartamento />
                 </div>
                 <div className="tab-pane container fade" id="contenido33">
-                <h1>FORM3</h1>
+                <FormTerreno />
                 </div>
             </div>
         </div>

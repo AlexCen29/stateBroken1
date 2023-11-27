@@ -1,31 +1,31 @@
-.miFormCasa{
+.miFormTerreno{
     display: flex;
     flex-direction: column;
     grid-gap:1cap;
     padding: 1%;
 }
-.miFormCasa input{
+.miFormTerreno input{
     border-radius: 5px;
     border: 1px solid;
 }
-.miDireccionCasa, .miTextboxCasa{
+.miDireccionTerreno, .miTextboxTerreno{
     display: flex;
     flex-direction: column;
 }
-.grupoCasa1 div{
+.grupoTerreno1 div{
     display: flex;
     flex-direction: column;
 }
-.grupoCasa1{
+.grupoTerreno1{
     display: flex;
     flex-direction: row;
     
 }
-.grupoCasa1 div{
+.grupoTerreno1 div{
     flex: 1;
     max-width:33.4%;
 }
-.miBotonCasa{
+.miBotonTerreno{
     margin-top: 4%;
     padding: 1%;
     display: flex;
@@ -41,18 +41,18 @@
     box-shadow: none;
     font-size: medium;
 }
-#textboxCasa{
+#textboxTerreno{
     height: 100px;
 }
 
-/* En tu archivo de estilos FormCasa.css o en tu archivo de estilos principal */
+/* En tu archivo de estilos FormTerreno.css o en tu archivo de estilos principal */
 
-.grupoTextCasa {
+.grupoTextTerreno {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .grupoTextCasa div {
+  .grupoTextTerreno div {
     flex: 0 0 33.33%; /* Cada grupo tiene un ancho del 33.33% del contenedor */
     box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
     margin-bottom: 10px; /* Espacio entre los grupos */
