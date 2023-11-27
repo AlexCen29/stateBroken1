@@ -40,6 +40,7 @@ function ListaMisClientes() {
             <th>Nombre</th>
             <th>Teléfono</th>
             <th>Correo</th>
+            <th>Fecha de creacion</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +49,7 @@ function ListaMisClientes() {
               <td>{cliente.nombre}</td>
               <td>{cliente.telefono}</td>
               <td>{cliente.correoElectronico}</td>
+              <td>{cliente.fechaCreacion}</td>
             </tr>
           ))}
         </tbody>

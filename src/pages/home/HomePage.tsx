@@ -71,8 +71,8 @@ function HomePage() {
         </div>        
       </div> */} 
 
-      {/* Profile page */}
-      <ProfilePage/>
+     
+     <ProfilePage/>
     </>
   );
 }
