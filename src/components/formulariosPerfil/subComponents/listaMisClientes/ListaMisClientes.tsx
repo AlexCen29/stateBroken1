@@ -1,48 +1,58 @@
+import React, { useState, useEffect } from 'react';
 import "./ListaMisClientes.css";
 import "../../../../../src/styles/index.css";
 
+interface Cliente {
+  id: number;
+  nombre: string;
+  correoElectronico: string;
+  fechaNac: string;
+  fechaCreacion: string;
+  telefono: number;
+  empleado: null;
+}
+
 function ListaMisClientes() {
+  const [clientes, setClientes] = useState<Cliente[]>([]);
+
+  useEffect(() => {
+    const fetchClientes = async () => {
+      const response = await fetch(`https://jimenezmiapi.somee.com/api/Cliente/empleado/${localStorage.getItem("idEmpleado")}`,{
+        method: "GET",
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem("token")}`
+        },
+      
+      
+      });
+      const data = await response.json();
+      setClientes(data);
+    };
+
+    fetchClientes();
+  }, []);
+
   return (
-    <>
-      <div id="clients">
-        <table className="miTabla">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Agente</th>
-              <th>Teléfono</th>
-              <th>Correo</th>
+    <div id="clients">
+      <table className="miTabla">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {clientes.map((cliente) => (
+            <tr key={cliente.id}>
+              <td>{cliente.nombre}</td>
+              <td>{cliente.telefono}</td>
+              <td>{cliente.correoElectronico}</td>
             </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Juan Pérez</td>
-              <td>María Gómez</td>
-              <td>55443322</td>
-              <td>juan@mail.com</td>
-            </tr>
-            <tr>
-              <td>Laura González</td>
-              <td>Pedro Fuentes</td>
-              <td>55668899</td>
-              <td>laura@mail.com</td>
-            </tr>
-            <tr>
-              <td>Laura González</td>
-              <td>Pedro Fuentes</td>
-              <td>55668899</td>
-              <td>laura@mail.com</td>
-            </tr>
-            <tr>
-              <td>Laura González</td>
-              <td>Pedro Fuentes</td>
-              <td>55668899</td>
-              <td>laura@mail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

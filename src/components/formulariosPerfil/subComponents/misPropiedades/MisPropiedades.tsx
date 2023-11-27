@@ -21,7 +21,7 @@ async function fetchProperties(): Promise<Property[]> {
   if (!token) {
     throw new Error('Token not found');
   }
-  const response = await fetch('https://jimenezmiapi.somee.com/api/InmueblesyTerrenos/ultimos5', {
+  const response = await fetch(`https://jimenezmiapi.somee.com/api/InmueblesyTerrenos/empleado/${localStorage.getItem("idEmpleado")}`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
