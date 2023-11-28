@@ -9,7 +9,7 @@ function ProfilePage() {
     <div className="row" id="row-id">    
       <SideMenu/>
       <TarjetaInfoPerfil />
-      <FormulariosPerfil />
+      
     </div>
   );
 }

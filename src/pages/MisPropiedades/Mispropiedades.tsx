@@ -1,7 +1,7 @@
 /* import React from 'react'
 
 import RenderProperties from '../../components/renderProperties/RenderProperties' */
-import MisPropiedades from '../../components/formulariosPerfil/subComponents/misPropiedades/MisPropiedades';
+import FormulariosPerfil from '../../components/formulariosPerfil/FormulariosPerfil';
 import SideMenu from '../../components/sideMenu/SideMenu'
 
 export const Mispropiedades = () => {
@@ -9,7 +9,7 @@ export const Mispropiedades = () => {
     <>
        <SideMenu />
 
-        <MisPropiedades />
+       <FormulariosPerfil />
     
     </>
   )
