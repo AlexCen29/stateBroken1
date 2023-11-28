@@ -31,6 +31,7 @@ function SideMenu() {
                   <li className="list-group-item dropend-item">
                     Dar propiedad de alta
                   </li>
+                  <li  className="list-group-item dropend-item"><a href="/mispropiedades" className="text-reset">Mis propiedades</a></li>
                 </ul>
               </li>
               <li className="list-group-item py-1">
