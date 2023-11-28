@@ -10,6 +10,7 @@ import {
 import HomePage from "./pages/home/HomePage";
 import ErrorPage from "./pages/error/ErrorPage"; 
 import LoginPage from "./pages/login/LoginPage";
+import ProfilePage from "../src/pages/profile/ProfilePage"
 
 function App() {  
   return(
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<LoginPage/>} />
           <Route path="/home" element={<HomePage />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path ="/profilePage" element={<ProfilePage />} />
         </Routes>
       </Router>
     </React.StrictMode>

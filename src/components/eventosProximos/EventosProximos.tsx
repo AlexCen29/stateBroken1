@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import { useState} from 'react';
+>>>>>>> c625445c805638cb4e0f21fa79f19247f8ca6d4c
 import '../../../src/styles/index.css';
 import './EventosProximos.css';
 

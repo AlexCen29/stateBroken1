@@ -73,7 +73,7 @@ function RenderProperties() {
     <div className="" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
       <div id="properties-grid">
-        {properties.slice(0, 3).map((property) => (
+        {properties.slice(0, 3).reverse().map((property) => (
           <div className="card" style={{ width: "16rem" }} key={property.id}>
             <div className="container" id="white-header">
               <div className="white-header-data">

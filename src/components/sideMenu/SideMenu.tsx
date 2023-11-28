@@ -53,6 +53,11 @@ function SideMenu() {
                   <span>Herramientas</span>
                 </a>
               </li>
+              <li className="list-group-item py-1">
+                <a href= "/profilePage" className="text-reset">
+                  <span>Perfil</span>
+                </a>
+              </li>
             </div>
           </div>
         </nav>
@@ -74,7 +79,7 @@ function SideMenu() {
               <i className="fas fa-bars"></i>
             </button>
 
-            <a className="navbar-brand" id="logo" href="#">
+            <a className="navbar-brand" id="logo" href="/home">
               <img
                 src="img\CasitaLogo.png"
                 height="50"
@@ -112,7 +117,7 @@ function SideMenu() {
                   style={{ color: "#1D1B20" }}
                 ></i>
               </a>
-              <a href="#">
+              <a href="/profilePage">
                 <div id="profile">
                   <img src="img\Avatar1.jpg" alt="profile" />
                 </div>

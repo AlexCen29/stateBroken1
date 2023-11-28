@@ -44,7 +44,7 @@ function ListaMisClientes() {
           </tr>
         </thead>
         <tbody>
-          {clientes.map((cliente) => (
+          {clientes.slice().reverse().map((cliente) => (
             <tr key={cliente.id}>
               <td>{cliente.nombre}</td>
               <td>{cliente.telefono}</td>
