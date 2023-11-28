@@ -38,9 +38,9 @@ function HomePage() {
   return (
     <>
       <SideMenu />
-      {/*
-      <div id="home-page">
-         <div className="row">
+
+      {/* <div id="home-page">
+        <div className="align-row">
           <div className="col">
             <div className="left-col">
               <RenderProperties />
@@ -56,7 +56,7 @@ function HomePage() {
             </div>
           </div>
           <div className="col">
-            <div className="right-col">
+            <div className="align-col">
               <EventosProximos />
               <div id="calendar-container">
                 <img
@@ -68,11 +68,9 @@ function HomePage() {
               </div>
             </div>
           </div>
-        </div>        
-      </div> */} 
-
-     
-     <ProfilePage/>
+        </div>
+      </div> */}
+      <ProfilePage/>
     </>
   );
 }
