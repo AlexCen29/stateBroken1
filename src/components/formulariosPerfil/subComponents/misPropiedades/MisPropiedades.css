@@ -24,11 +24,12 @@ i{
     max-width: 55vw;
 }
 
-#properties-grid{
+/* ojo aqui */
+/* #properties-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 1em;
-}
+} */
 
 #white-header{
     display: flex;
