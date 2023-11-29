@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     grid-gap:1cap;
-    padding: 2%;
+    padding: 3%;
+    max-width: 50%;
 }
 .miFormCliente input{
     border-radius: 5px;
@@ -15,11 +16,15 @@
 .grupo1 div{
     display: flex;
     flex-direction: column;
+    width: max-content;
+    width: 100%;
 }
 .grupo1{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: max-content;
+    width: 100%;
+    gap: 1em;
 }
 .miBotonCliente{
     margin-top: 4%;

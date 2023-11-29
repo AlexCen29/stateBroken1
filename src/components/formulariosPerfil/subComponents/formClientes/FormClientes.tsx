@@ -65,6 +65,10 @@ function FormClientes({ onClose }: FormClientesProps) {
           <label htmlFor="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" required onChange={handleChange} />
         </div>
+        <div className="miCorreo">
+          <label htmlFor="correoElectronico">Correo Electronico</label>
+          <input type="email" id="correoElectronico" name="correoElectronico" required onChange={handleChange} />
+        </div>
         <div className="grupo1">
           <div>
             <label htmlFor="email">Telefono</label>
@@ -75,11 +79,8 @@ function FormClientes({ onClose }: FormClientesProps) {
             <input type="date" id="fechaNac" name="fechaNac" required onChange={handleChange} />
           </div>
         </div>
-        <div className="miCorreo">
-          <label htmlFor="correoElectronico">Correo Electronico</label>
-          <input type="email" id="correoElectronico" name="correoElectronico" required onChange={handleChange} />
-        </div>
-        <button type="submit">Crear Cliente</button>
+        
+        <button className='miBotonCliente' type="submit">Crear Cliente</button>
       </form>
     </div>
   );

@@ -19,7 +19,7 @@ function FormulariosPerfil() {
   };
 
   return (
-    <div className="mt-5 miTab">
+    <div className="miTab">
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a className="nav-link active" data-bs-toggle="tab" href="#contenido1">
@@ -43,7 +43,7 @@ function FormulariosPerfil() {
             <>
               <FormClientes onClose={cerrarFormularioHandler} />
               <footer>
-                <button className="miBoton" onClick={cerrarFormularioHandler}>
+                <button className="miBoton2" onClick={cerrarFormularioHandler}>
                   Cerrar
                 </button>
               </footer>
@@ -67,7 +67,7 @@ function FormulariosPerfil() {
             <>
               <FormPropiedades onClose={cerrarFormularioHandler} />
               <footer>
-                <button className="miBoton" onClick={cerrarFormularioHandler}>
+                <button className="miBoton2" onClick={cerrarFormularioHandler}>
                   Cerrar
                 </button>
               </footer>
@@ -91,7 +91,7 @@ function FormulariosPerfil() {
             <>
               <h1>Formulario de Procesos de Venta</h1>
               <footer>
-                <button className="miBoton" onClick={cerrarFormularioHandler}>
+                <button className="miBoton2" onClick={cerrarFormularioHandler}>
                   Cerrar
                 </button>
               </footer>

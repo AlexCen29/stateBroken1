@@ -64,7 +64,7 @@ function MisPropiedades() {
 
   return (
     <div className="" id="properties">
-      <div id="properties-grid">
+      <div className='misPro2'>
         {properties.slice().map((property) => (
           <div className="card" style={{ width: "16rem" }} key={property.id}>
             <div className="container" id="white-header">

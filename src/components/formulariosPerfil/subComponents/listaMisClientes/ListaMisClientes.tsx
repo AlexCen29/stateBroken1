@@ -33,7 +33,7 @@ function ListaMisClientes() {
   }, []);
 
   return (
-    <div id="clients">
+    <div>
       <table className="miTabla">
         <thead>
           <tr>

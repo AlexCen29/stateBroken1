@@ -9,14 +9,14 @@ function FormPropiedades() {
             <ul className="nav nav-tabs">
                 <li className="nav-item">
                     <a className="nav-link active" data-bs-toggle="tab" href="#contenido11">
-                        Casa
+                        Inmueble
                     </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a className="nav-link" data-bs-toggle="tab" href="#contenido22">
                         Departamento
                     </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <a className="nav-link" data-bs-toggle="tab" href="#contenido33">
                         Terreno
@@ -25,13 +25,23 @@ function FormPropiedades() {
             </ul>
             <div className="tab-content">
                 <div className="tab-pane container active" id="contenido11">
-                <FormCasa />
+                    <input type="radio" className="btn-check" name="options" id="option1" autoComplete="off" checked />
+                    <label className="btn btn-secondary" htmlFor="option1">Casa</label>
+
+                    <input type="radio" className="btn-check" name="options" id="option2" autoComplete="off" />
+                    <label className="btn btn-secondary" htmlFor="option2">Departamento</label>
+                    <div className="formCasa">
+                        <FormCasa />
+                    </div>
+                    <div className="formDepartamento">
+                    <FormDepartamento />
+                    </div>
                 </div>
-                <div className="tab-pane fade misCartas" id="contenido22">
+                {/* <div className="tab-pane fade misCartas" id="contenido22">
                 <FormDepartamento />
-                </div>
+                </div> */}
                 <div className="tab-pane container fade" id="contenido33">
-                <FormTerreno />
+                    <FormTerreno />
                 </div>
             </div>
         </div>
