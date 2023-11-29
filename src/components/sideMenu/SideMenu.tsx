@@ -13,7 +13,7 @@ function SideMenu() {
             <div className="list-group list-group-flush mx-3 mt-4">
               {/* Elementos antes de "Expanded menu" */}
               <li className="list-group-item py-1">
-                <a href="" className="text-reset">
+                <a href="/procesodeventa" className="text-reset">
                   <span>Procesos de venta</span>
                 </a>
               </li>
@@ -50,7 +50,7 @@ function SideMenu() {
                 </a>
               </li>
               <li className="list-group-item py-1">
-                <a href="" className="text-reset">
+                <a href="/procesodeventa" className="text-reset">
                   <span>Herramientas</span>
                 </a>
               </li>

@@ -12,6 +12,7 @@ import ErrorPage from "./pages/error/ErrorPage";
 import LoginPage from "./pages/login/LoginPage";
 import ProfilePage from "../src/pages/profile/ProfilePage";
 import {Mispropiedades} from "../src/pages/MisPropiedades/Mispropiedades";
+import { Procesodeventa } from "./pages/ProcesodeVenta/ProcesodeVenta";
 
 function App() {  
   return(
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
           <Route path ="/profilePage" element={<ProfilePage />} />
           <Route path ="/mispropiedades" element={<Mispropiedades />} />
+          <Route path ="/procesodeventa" element={<Procesodeventa />} />
         </Routes>
       </Router>
     </React.StrictMode>
