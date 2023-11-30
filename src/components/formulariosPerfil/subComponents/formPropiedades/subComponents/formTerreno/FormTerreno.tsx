@@ -31,19 +31,37 @@ function FormTerreno() {
                 <div className='grupoTextTerreno'>
                     <div>
                         <input type="checkbox" id="piscinaTerreno" name="piscinaTerreno" value="yes" />
-                        <label htmlFor="piscinaTerreno">Acceso a carreteras</label>
+                        <label htmlFor="piscinaTerreno">Carreteras</label>
                     </div>
                     <div>
                         <input type="checkbox" id="balconTerreno" name="balconTerreno" value="yes" />
-                        <label htmlFor="balconTerreno">Acceso agua</label>
+                        <label htmlFor="balconTerreno">Posee Agua</label>
                     </div>
                     <div>
                         <input type="checkbox" id="amuebladoTerreno" name="amuebladoTerreno" value="yes" />
-                        <label htmlFor="amuebladoTerreno">Acceso electricidad</label>
+                        <label htmlFor="amuebladoTerreno">Posee electricidad</label>
                     </div>
                     <div>
                         <input type="checkbox" id="cocinaTerreno" name="cocinaTerreno" value="yes" />
-                        <label htmlFor="cocinaTerreno">Arbolado</label>
+                        <label htmlFor="cocinaTerreno">Posee arbolado</label>
+                    </div>
+                </div>
+                <div className='grupoImg2'>
+                    <div>
+                        <label htmlFor="imgTerreno1">Imagen 1:</label>
+                        <input type="file" id="imgTerreno1" name="imgTerreno1" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgTerreno2">Imagen 2:</label>
+                        <input type="file" id="imgTerreno2" name="imgTerreno2" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgTerreno3">Imagen 3:</label>
+                        <input type="file" id="imgTerreno3" name="imgTerreno3" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgTerreno4">Imagen 4:</label>
+                        <input type="file" id="imgTerreno4" name="imgTerreno4" accept="image/*"></input>
                     </div>
                 </div>
                 <button className='miBotonTerreno' type="submit">Agregar</button>

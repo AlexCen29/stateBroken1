@@ -3,6 +3,17 @@ import "./FormCasa.css";
 import "../../../../../../../src/styles/index.css";
 
 function FormCasa() {
+    const validarImagenes = () => {
+        const input = document.getElementById('imagenes');
+        const mensajeError = document.getElementById('mensajeError');
+
+        if (input.files.length > 4) {
+            mensajeError.innerHTML = 'Solo se permiten hasta 4 imágenes.';
+            input.value = '';
+        } else {
+            mensajeError.innerHTML = '';
+        }
+    };
     return (
         <div>
             <form className='miFormCasa' action="/submit" method="post" >
@@ -63,6 +74,24 @@ function FormCasa() {
                     <div>
                         <input type="checkbox" id="garajeCasa" name="garajeCasa" value="yes" />
                         <label htmlFor="garajeCasa">Garaje</label>
+                    </div>
+                </div>
+                <div className='grupoImg'>
+                    <div>
+                        <label htmlFor="imgCasa1">Imagen 1:</label>
+                        <input type="file" id="imgCasa1" name="imgCasa1" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgCasa2">Imagen 2:</label>
+                        <input type="file" id="imgCasa2" name="imgCasa2" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgCasa3">Imagen 3:</label>
+                        <input type="file" id="imgCasa3" name="imgCasa3" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgCasa4">Imagen 4:</label>
+                        <input type="file" id="imgCasa4" name="imgCasa4" accept="image/*"></input>
                     </div>
                 </div>
                 <button className='miBotonCasa' type="submit">Agregar</button>

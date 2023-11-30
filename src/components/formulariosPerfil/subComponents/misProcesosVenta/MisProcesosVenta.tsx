@@ -4,7 +4,7 @@ import "../../../../../src/styles/index.css";
 function MisProcesosVenta() {
     return (
         <>
-            <div id="clients">
+            <div>
                 <table className="miTabla">
                     <thead>
                         <tr>

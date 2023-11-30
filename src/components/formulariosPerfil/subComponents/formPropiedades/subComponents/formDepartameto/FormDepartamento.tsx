@@ -67,6 +67,24 @@ function FormDepartamento() {
                         <label htmlFor="cocinaDepartamento">Cocina</label>
                     </div>
                 </div>
+                <div className='grupoImg3'>
+                    <div>
+                        <label htmlFor="imgDepa1">Imagen 1:</label>
+                        <input type="file" id="imgDepa1" name="imgDepa1" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgDepa2">Imagen 2:</label>
+                        <input type="file" id="imgDepa2" name="imgDepa2" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgDepa3">Imagen 3:</label>
+                        <input type="file" id="imgDepa3" name="imgDepa3" accept="image/*"></input>
+                    </div>
+                    <div>
+                        <label htmlFor="imgDepa4">Imagen 4:</label>
+                        <input type="file" id="imgDepa4" name="imgDepa4" accept="image/*"></input>
+                    </div>
+                </div>
                 <button className='miBotonDepartamento' type="submit">Agregar</button>
             </form>
         </div>
