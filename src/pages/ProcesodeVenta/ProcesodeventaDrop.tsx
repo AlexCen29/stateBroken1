@@ -1,51 +1,95 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './ProcesodeVenta.css'
 
 interface Task {
-    id: number,
-    title: string,
-    body: string,
-    list: number
+    id: number;
+    tipodePropiedad: string;
+    idEstadoDeVenta_fk: number;
+    
+    cliente: {
+        nombre: string;
+        
+    };
+    Propiedad: {
+        direccion: string;
+  
+    };
+    empleado: {
+        nombre: string
+    };
+
+    estadoVentas: {
+        nombre: string;
+    };
+    }
+
+
+const fetchTasks = async (): Promise<Task[]> => {
+    const response = await fetch(`http://jimenezmiapi.somee.com/api/ProcesoDeVenta?IdEmpleadoFk=${localStorage.getItem('idEmpleado')}`,{
+        headers: {
+            Authorization : `Bearer ${localStorage.getItem('token')}`
+        }
+    });
+    const data = await response.json();
+
+    const tasks = data.map((item: any) => {
+        let task: Task = {
+            id: item.id,
+            tipodePropiedad: item.tipodePropiedad,
+            idEstadoDeVenta_fk:parseInt(item.idEstadoDeVenta_fk) ,
+            cliente: {
+                nombre: item.cliente.nombre
+              
+            },
+            Propiedad: item.tipodePropiedad === 'Inmueble' ? item.inmueble : item.propiedadTerreno,
+            empleado: {
+                nombre: item.empleado.nombre
+               
+            },
+            estadoVentas: {
+                nombre: item.estadoVentas.nombre,
+                }
+    }
+        return task;
+    });
+
+    return tasks;
+}
+
+const updateTask = async (id: number, newState: number) => {
+    const response = await fetch(`http://jimenezmiapi.somee.com/api/CambiarEstadoVenta/${id}/${newState}`, {
+        method: 'Post',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization : `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ idEstadoDeVenta_fk: newState })
+    });
+
+    if (!response.ok) {
+        throw new Error('Error al actualizar la tarea');
+    }
 }
 
 export const DragAndDrop = () => {
-    const [tasks, setTasks] = useState([
-        { 
-            id: 1,
-            title: 'Tarea 1',
-            body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit ipsum dolor.',
-            list: 1
-        },
-        { 
-            id: 2,
-            title: 'Tarea 2',
-            body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit ipsum dolor.',
-            list: 1
-        },
-        { 
-            id: 3,
-            title: 'Tarea 3',
-            body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit ipsum dolor.',
-            list: 3
-        },
-        { 
-            id: 4,
-            title: 'Tarea 4',
-            body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit ipsum dolor.',
-            list: 2
-        },
-        { 
-            id: 5,
-            title: 'Tarea 5',
-            body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit ipsum dolor.',
-            list: 2
-        },
-    ]);
+    const [tasks, setTasks] = useState<Task[]>([]);
+
+    const getTasks = async () => {
+        const tasksFromAPI = await fetchTasks();
+        console.log(tasksFromAPI);
+        setTasks(tasksFromAPI);
+    }
+
+    useEffect(() => {
+        getTasks();
+    }, []);
+
+
 
     const getList = (list: number) => {
-        return tasks.filter(item => item.list === list)
+        return tasks.filter(item => Number(item.idEstadoDeVenta_fk) === list)
     }
     
     const startDrag = (evt: React.DragEvent<HTMLDivElement>, item: Task) => {
@@ -60,16 +104,22 @@ export const DragAndDrop = () => {
     const onDrop = (evt: React.DragEvent<HTMLDivElement>, list: number) => {
         const itemID = evt.dataTransfer.getData('itemID');
         const item = tasks.find(item => item.id === parseInt(itemID));
-    
+
         if (item) {
-            item.list = list;
-    
+            item.idEstadoDeVenta_fk = list;
+
             const newState = tasks.map(task => {
                 if(task.id === parseInt(itemID)) return item;
                 return task
             })
-    
+
             setTasks(newState);
+
+            updateTask(item.id, list).then(() => {
+                getTasks(); // Actualizar la lista de tareas
+            }).catch(error => {
+                console.error('Error al actualizar la tarea:', error);
+            });
         }
     }
 
@@ -91,8 +141,9 @@ export const DragAndDrop = () => {
                     <div className='dd-zone' onDragOver={(evt => draggingOver(evt))} onDrop={(evt => onDrop(evt, 1))}>
                         {getList(1).map(item => (
                             <div className='dd-element' key={item.id} draggable onDragStart={(evt) => startDrag(evt, item)}>
-                                <strong className='title'>{item.title}</strong>
-                                <p className='body'>{item.body}</p>
+                                <strong className='title'>{item.Propiedad.direccion}</strong>
+                                <p className='body'>{item.cliente.nombre}</p>
+                                <p className='body'>{item.estadoVentas.nombre}</p>
                             </div>
                         ))}
                     </div>
@@ -105,8 +156,9 @@ export const DragAndDrop = () => {
                     <div className='dd-zone' onDragOver={(evt => draggingOver(evt))} onDrop={(evt => onDrop(evt, 2))}>
                         {getList(2).map(item => (
                             <div className='dd-element' key={item.id} draggable onDragStart={(evt) => startDrag(evt, item)}>
-                                <strong className='title'>{item.title}</strong>
-                                <p className='body'>{item.body}</p>
+                                <strong className='title'>{item.Propiedad.direccion}</strong>
+                                <p className='body'>{item.cliente.nombre}</p>
+                                <p className='body'>{item.estadoVentas.nombre}</p>
                             </div>
                         ))}
                     </div>
@@ -119,8 +171,9 @@ export const DragAndDrop = () => {
                     <div className='dd-zone' onDragOver={(evt => draggingOver(evt))} onDrop={(evt => onDrop(evt, 3))}>
                         {getList(3).map(item => (
                             <div className='dd-element' key={item.id} draggable onDragStart={(evt) => startDrag(evt, item)}>
-                                <strong className='title'>{item.title}</strong>
-                                <p className='body'>{item.body}</p>
+                                <strong className='title'>{item.Propiedad.direccion}</strong>
+                                <p className='body'>{item.cliente.nombre}</p>
+                                <p className='body'>{item.estadoVentas.nombre}</p>
                             </div>
                         ))}
                     </div>
