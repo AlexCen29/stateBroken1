@@ -13,6 +13,7 @@ import LoginPage from "./pages/login/LoginPage";
 import ProfilePage from "../src/pages/profile/ProfilePage";
 import {Mispropiedades} from "../src/pages/MisPropiedades/Mispropiedades";
 import { Procesodeventa } from "./pages/ProcesodeVenta/ProcesodeVenta";
+import Property from "./pages/property/Property";
 
 function App() {  
   return(
@@ -25,6 +26,7 @@ function App() {
           <Route path ="/profilePage" element={<ProfilePage />} />
           <Route path ="/mispropiedades" element={<Mispropiedades />} />
           <Route path ="/procesodeventa" element={<Procesodeventa />} />
+          <Route path="/property/:id" element={<Property />} />
         </Routes>
       </Router>
     </React.StrictMode>
