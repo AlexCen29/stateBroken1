@@ -109,13 +109,13 @@ function Property() {
                 <div className="col">{propertyData.precioVenta}</div>
                 <div className="col">{propertyData.metrosCuadrados}</div>
                 <div className="col">{propertyData.anoConstruccion}</div>
-                <div className="col">{propertyData.status}</div>
+                <div className="col">{propertyData.status|| "indefinido"}</div>
               </div>
             </div>
             <div className="description">
               <h1>Descripción</h1>
               <p>
-               {/*  Esta espaciosa casa, ubicada en una de las áreas más pintorescas
+                 Esta espaciosa casa, ubicada en una de las áreas más pintorescas
                 de Cinco Colonias, es una oportunidad única. Con 5 habitaciones
                 distribuidas en 5 plantas, ofrece un amplio espacio para toda la
                 familia. La propiedad se encuentra amueblada y cuenta con un
@@ -123,7 +123,7 @@ function Property() {
                 detalles tradicionales. Los baños y la cocina están totalmente
                 equipados, y un balcón privado agrega un toque de encanto al
                 lugar. Además, la propiedad cuenta con un garaje para la
-                comodidad de sus residentes. */}
+                comodidad de sus residentes. 
                 {propertyData.descripcion}
               </p>
             </div>
@@ -133,12 +133,12 @@ function Property() {
                 <li className="secondary-item">CP: 28752</li>
                 <li className="secondary-item">Habitaciones: {propertyData.habitaciones}</li>
                 <li className="secondary-item">Número de Plantas: {propertyData.numPlantas}</li>
-                <li className="secondary-item">Amueblado: {propertyData.amueblada}</li>
-                <li className="secondary-item">Baños: {propertyData.banos}</li>
-                <li className="secondary-item">Piscina: {propertyData.piscina}</li>
-                <li className="secondary-item">Balcón: {propertyData.balcon}</li>
-                <li className="secondary-item">Cocina: {propertyData.cocina}</li>
-                <li className="secondary-item">Garaje: {propertyData.garaje}</li>
+                <li className="secondary-item">Amueblado: {propertyData.amueblada || "Si"}</li>
+                <li className="secondary-item">Baños: {propertyData.banos || "si"} </li>
+                <li className="secondary-item">Piscina: {propertyData.piscina || "no"}</li>
+                <li className="secondary-item">Balcón: {propertyData.balcon || "si"}</li>
+                <li className="secondary-item">Cocina: {propertyData.cocina || "si"}</li>
+                <li className="secondary-item">Garaje: {propertyData.garaje || "no"}</li>
               </ul>
             </div>
           </div>
