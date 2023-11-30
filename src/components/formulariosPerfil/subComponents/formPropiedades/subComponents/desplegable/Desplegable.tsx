@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Desplegable.css";
 import "../../../../../../../src/styles/index.css";
-import FormCasa from '../formCasa/FormCasa';
+import {FormCasa} from '../formCasa/FormCasa';
 import FormDepartamento from '../formDepartameto/FormDepartamento';
 
 function Desplegable() {
