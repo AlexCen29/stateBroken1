@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../../src/styles/index.css";
 import "./renderProperties.css";
+import { Link } from "react-router-dom";
 
 interface Property {
   tipo: string;
@@ -73,37 +74,43 @@ function RenderProperties() {
     <div className="" id="properties">
       <h1>Propiedades agregadas recientemente</h1>
       <div id="properties-grid">
-        {properties.slice(0, 3).reverse().map((property) => (
-          <div className="card" style={{ width: "16rem" }} key={property.id}>
-            <div className="container" id="white-header">
-              <div className="white-header-data">
-                <div className="profile-pic"></div>
-                <div className="persona">
-                  <h5>{property.empleado.nombre}</h5>
-                  <h6>Agente</h6>
+        {properties
+          .slice(0, 3)
+          .reverse()
+          .map((property) => (
+            <div className="card" style={{ width: "16rem" }} key={property.id}>
+              <div className="container" id="white-header">
+                <div className="white-header-data">
+                  <div className="profile-pic"></div>
+                  <div className="persona">
+                    <h5>{property.empleado.nombre}</h5>
+                    <h6>Agente</h6>
+                  </div>
+                  <i
+                    className="fa-solid fa-ellipsis-vertical"
+                    style={{ color: "#1D1B20" }}
+                    id="options"
+                  ></i>
                 </div>
-                <i
-                  className="fa-solid fa-ellipsis-vertical"
-                  style={{ color: "#1D1B20" }}
-                  id="options"
-                ></i>
+              </div>
+              <img src={property.img1Path} className="card-img-top" alt="..." />
+              <div id="prop-card-bod">
+                <h5 className="card-title card-item">{property.direccion}</h5>
+                <p className="card-item">{property.descripcion}</p>
+                <div id="buttons">
+                  <Link
+                    to={`/property/${property.id}`}
+                    className="btn btn-primary detalles"
+                  >
+                    Detalles
+                  </Link>
+                  <a href="#" className="btn btn-primary">
+                    Ofertar
+                  </a>
+                </div>
               </div>
             </div>
-            <img src={property.img1Path} className="card-img-top" alt="..." />
-            <div id="prop-card-bod">
-              <h5 className="card-title card-item">{property.direccion}</h5>
-              <p className="card-item">{property.descripcion}</p>
-              <div id="buttons">
-                <a href="#" className="btn btn-primary detalles">
-                  Detalles
-                </a>
-                <a href="#" className="btn btn-primary">
-                  Ofertar
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

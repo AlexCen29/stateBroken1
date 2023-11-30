@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../../../../../src/styles/index.css";
 import "./MisPropiedades.css";
+import { Link } from 'react-router-dom';
 
 interface Property {
   tipo: string;
@@ -86,9 +87,12 @@ function MisPropiedades() {
               <h5 className="card-title">{property.direccion}</h5>
               <p className="card-text">{property.descripcion}</p>
               <div id="buttons">
-                <a href="#" className="btn btn-primary detalles">
-                  Detalles
-                </a>
+              <Link
+                    to={`/property/${property.id}`}
+                    className="btn btn-primary detalles"
+                  >
+                    Detalles
+                  </Link>
                 <a href="#" className="btn btn-primary">
                   Ofertar
                 </a>
